@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<thesis_ideas>
+  <to_cover>
+
+  </to_cover>
+  <chapters>
+    <objective>
+      explain Kevin's TIA-EIS
+      implementing two DSLs for a (two-way) XML-interface
+      analysis of simple DSLs
+    </objective>
+    <hardest_part>implementation from XML to DSL</hardest_part>
+    <timeline>
+      <todo>
+        <may>
+          finished reading about xtext
+          signed up for thesis
+          begun documentation
+          begun implementation
+          finished table of contents
+        </may>
+        <june></june>
+        <july></july>
+        <august></august>
+        <september></september>
+      </todo>
+    </timeline>
+    <compiler_basics>
+      <lexer></lexer>
+      <parser></parser>
+      <grammar></grammar>
+    </compiler_basics>
+    <xtext>
+      <features>a dsl is not just a dsl</features>
+      <xtend></xtend>
+    </xtext>
+    <implementation>
+      <language_analysis>
+        <dsl>
+          aspects
+          requirements
+          simplicity of a DSL for my purpose
+          how would a automation tech use the DSL?
+        </dsl>
+        <xml>
+          complicated structure
+        </xml>
+      </language_analysis>
+      <grammar></grammar>
+      <usage>
+        web_application?
+        cmd-line exe?
+      </usage>
+    </implementation>
+  </chapters>
+</thesis_ideas>

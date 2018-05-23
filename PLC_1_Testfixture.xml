@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestFixture xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TiaProjectName>BADemo</TiaProjectName>
+  <PlcName>PLC_1</PlcName>
+  <TestCases>
+    <TestCase ID="0" TestActive="true" Blockname="Rechner" Blocktype="FC" Description="Rechner Addition">
+      <TestSteps>
+        <TestStep PlcCycle="0" Description="Init">
+          <Inputs>
+            <Input Name="Mode"  Datatype="Char" Direction="Input" Value="' '" />
+            <Input Name="Zahl1" Datatype="Int"  Direction="Input" Value="0" />
+            <Input Name="Zahl2" Datatype="Int"  Direction="Input" Value="0" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="0" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="2" Description="50+60">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="60" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="110" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="3" Description="32000+40000">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="32000" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="32000" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="true" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="0" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="4" Description="50+60">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="60" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="110" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="5" Description="50-60">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="-60" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="-10" Range="" />
+          </Outputs>
+        </TestStep>
+      </TestSteps>
+    </TestCase>
+    <TestCase ID="1" TestActive="true" Blockname="Rechner" Blocktype="FC" Description="Rechner Multiplikation">
+      <TestSteps>
+        <TestStep PlcCycle="0" Description="Init">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="' '" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="0" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="0" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="0" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="2" Description="3*3">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="3" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="3" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="9" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="3" Description="89*89">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="89" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="89" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="7921" Range="" />
+          </Outputs>
+        </TestStep>
+        <TestStep PlcCycle="5" Description="3*3 falsch">
+          <Inputs>
+            <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+            <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="3" />
+            <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="3" />
+          </Inputs>
+          <Outputs>
+            <Output Name="Overload" Datatype="Bool" Direction="Output" Value="false" Range="" />
+            <Output Name="Ret_Val" Datatype="Int" Direction="Return" Value="10" Range="" />
+          </Outputs>
+        </TestStep>
+      </TestSteps>
+    </TestCase>
+    <TestCase ID="3" TestActive="false" Blockname="Cycle_Count" Blocktype="FB" Description="">
+      <TestSteps>
+        <TestStep PlcCycle="0" Description="">
+          <Inputs>
+            <Input Name="Reset" Datatype="Bool" Direction="Input" Value="false" />
+            <Input Name="Up" Datatype="Bool" Direction="Input" Value="false" />
+          </Inputs>
+          <Outputs>
+            <Output Name="ZyklenCount" Datatype="UDInt" Direction="Output" Value="0" Range="" />
+          </Outputs>
+        </TestStep>
+      </TestSteps>
+    </TestCase>
+  </TestCases>
+</TestFixture>

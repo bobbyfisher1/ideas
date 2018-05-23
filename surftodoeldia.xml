@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<surftodoeldia>
+  <todo>
+    Testfixture Template Generator: (Momentan entfernt, evtl. bei der Fachberatung München erhältlich)
+    XML Schema - DOM, SAX
+    git
+    write Mahr, Harry and JJ
+  </todo>
+  <Questions>
+    <Idee_1>
+      Nach der Konvertierung wird ein blankes Layout erstellt.
+      (Nachfragen, ob das genaue Layout das aus der pdf entspricht. Ich hab ja die Programme nicht.)
+      Das Layout wird bei der Anwendung mit angegeben.
+      Hierdurch werden die Testfälle dem Layout hinzugefügt.
+      Dabei werden die Attribute der Testcases mit angegeben, bspw. ID-Nummmerierung, Blockname, Blocktype, Description, etc.
+      Auch die TestSteps werden genau festgelegt.
+    </Idee_1>
+    <Idee_2>
+      Die erste Anwendung wird redundant.
+      Alle Details werden bei der Definition der Testfälle hinzugefügt wie bspw. TiaProjectName, PlcName.
+      Compiler erzeugt dann das fertige xml-File
+    </Idee_2>
+    <TIA>
+      How does TIA use the xml Testfixure-xml-file exactly?
+      Is the operation within the description?
+      In what program and how is the xml testfixture operated with? Wie und wo agiert er mit der xml-Datei?
+
+      Can I write my own DSL? What about rights if I use opensource software?
+
+      Can I look into the xml parser?
+      Is there any predefined structure I need to follow? - xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      Is it too cluttered?
+      Is every info neccessary?
+      Can I optimize it?
+    </TIA>
+    <CCDL>
+      What does CCDL look like?
+      Can I use it and how?
+      Is it a simple enough DSL to use XText or ANTLR?
+    </CCDL>
+    <Compiler>
+      How I am I going to do this?
+      How is the end result going to look like, a program?
+    </Compiler>
+    Can I get Kevin's thesis?
+    This isn't unit testing is it? It's integration testing.
+    It's meant to be automised and it is already so!
+  </Questions>
+  <Thoughts>
+    <Software>
+      What is it? - Can it be helpful? - Should I look into and use it?
+      <Git/>
+      <Jenkins/>
+      <JIRA/>
+      <Confluence/>
+    </Software>
+    <UnitTesting>
+      other unittesting languages?
+    </UnitTesting>
+    <What_I_need_to_look_further_into>
+      DOM
+      SAX
+    </What_I_need_to_look_further_into>
+  </Thoughts>
+  <References>
+    work with 3.1.2 "Beschreibung von Testfällen" from
+    C:\Users\Z0003DATS\Documents\Lorenzo\GSO\8.Semester\Bachelor\Kevin\TIA-EIS-master\TIA-EIS-master\Documention\TIA EIS Getting Started.pdf
+
+    work with the testfixture and report from
+    C:\Users\Z0003DATS\Documents\Lorenzo\GSO\8.Semester\Bachelor\Kevin\TIA-EISv0.0.2\PLC_1_Testfixture.xml
+    C:\Users\Z0003DATS\Documents\Lorenzo\GSO\8.Semester\Bachelor\Kevin\TIA-EISv0.0.2\Report_PLC_1.xml
+  </References>
+  <Usage>
+    requirements:
+    TIA_EIS.TemplateGen.exe   - Konvertierung eines PLC Bausteins in xml
+    TIA_EIS.Agent.exe         - Überprüfung der Testfälle
+
+    Kochrezept:
+    in TIA V14: Simulierbarkeit der PLC der exportiert werden soll aktivieren und speichern
+    TIA_EIS.TemplateGen.exe verwenden     ->  PLC Name=""_Testfixture.xml
+    weitere Testfälle PER HAND beschreiben (This is where you come in)
+    <!--Frage: Sind die Anweisungen der Testfälle wie Addition/Multiplikation in der Desciption notiert?-->
+    Ausführung der definierten Testfälle  ->  TIA_EIS.Agent.exe ausführen
+    Testbericht:   Report_PLC_Name.xml
+  </Usage>
+  <Razorcat>
+    Contact:  Tobias Lang
+    Phone:    + 49 30 536 357 55
+    <message>
+      Guten Tag Herr Newman,
+      vielen Dank für ihr Interesse an unseren Produkten ITE, CCDL und TOP.
+      Allerdings ist keines dieser drei Werkzeuge zur Erstellung oder Definition von Unittests geeignet.
+      Unsere Testbeschreibungssprache CCDL ist für den Realtime Blackbox Systemtest konzipiert.
+      In diesem Kontext ist es für ein CCDL Skript möglich über Prozessvariablen mit einem zu testenden System zu interagieren.
+      ITE ist ein Testmanagement-Werkzeug für einen sauberen Testprozess von Requirements über Testbeschreibungen, Testdurchführungen bis hin zu Reports.
+      TOP und TRM sind Tools zur Testverwaltung an einem Hardware-in-the-Loop Prüfstand.
+      Darüber hinaus haben wir TESSY für den Unittest von Embedded Systemen in unserem Produktportfolio.
+
+      Ob eines dieser Werkzeuge (am ehesten CCDL) für eine Integration in das TIA Portal in Frage kommt,
+      können wir gerne kurz telefonisch diskutieren.
+      Dann können sie mir vielleicht auch kurz ihr Aufgabenstellung und das TIA Portal genauer beschreiben.
+      Ich bin dafür ab dem 4.4. telefonisch unter der unten stehenden Nummer erreichbar.
+
+      Mit freundlichen Grüßen
+      Tobias Lang
+    </message>
+    <Tia>
+      Entwicklungsumgebung
+      -Speicherprogrammierbare Steuerungen SPS programmieren
+      -Human Machine Interface (HMI) projektieren
+      -Antriebe und Peripheriesysteme von der Firma Siemens konfigurieren, parametrieren
+
+      angelehnt an die Step7 Programmierumgebung:   FUP KOP AWL SCL GRAPH
+
+      Organisationsbausteine  -> Main
+      Functionsbausteine      -> Klassen
+      Functionen              -> Methode
+    </Tia>
+    <excert>
+      Der Vorgang für das Testen auf Bausteinebene (Unittest) im TIA-Portal muss für den Continuous
+      Integration Kreislauf automatisiert und reproduzierbar ablaufen.
+      Momentan gibt es keine Standardisierung in der industriellen Automatisierung für die Beschreibung von Testfällen.
+      Deshalb wurde in Eigenregie mit der Siemens Fachberatung in München ein Format
+      entworfen, dass für den Entwickler gut handhabbar und lesbar ist. Die Entscheidung fiel
+      zugunsten des XML-Formats, da für dieses bereits einfach zu bedienende Editoren vorhanden
+      sind und die Erzeugung in einem .NET basierenden Programm leicht umzusetzen ist.
+    </excert>
+    <send>
+      to Razorcat: send an example of the testfixture
+    </send>
+    <outlook>
+      10 day trialversion of CEV (CCDL + Editor with practical features)
+      use XText
+      <example_DSL>
+        "Wenn ich eine minimale Testsprache für ihren Anwendungsbereich designen müsste,
+        würde ich nur auf drei bis fünf Schlüsselwörter zurückgreifen:
+        Define, Set und Expect und Testcase sowie Teststep."
+
+        Define um nur einmalig am Anfang eines Tests oder einer Testgruppe die Eigenschaften von Signalen zu definieren.
+        Also ist das Signal ein Integer, Float oder Boolean und handelt es sich um einen Eingang oder Ausgang.
+        Optional könnte das define noch einen Default Wert bekommen.
+
+        define input zahl1 as int with default 0
+        define output zahl2 as boolean
+
+        Mit Test und Teststep würden nun Blöcke als Tests bzw. Testschritte gruppiert:
+        testcase "Error Test 1" {
+
+        teststep 1 {
+        ...
+        }
+
+        teststep 2 {
+        ...
+        }
+        }
+
+        Set um diese Signale in einem Test oder Teststep mit Werten zu belegen:
+        set zahl1 to 5
+
+        Und abschließend Expect um anschließend Werte zu überprüfen:
+        expect zahl2 is true
+        expect zahl3 is between 7 and 9
+      </example_DSL>
+    </outlook>
+  </Razorcat>
+</surftodoeldia>

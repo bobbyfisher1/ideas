@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TiaProjectName>BADemo</TiaProjectName>
+  <PlcName>PLC_1</PlcName>
+  <PassedCount>1</PassedCount>
+  <FailedCount>1</FailedCount>
+  <NotValidCount>0</NotValidCount>
+  <TestCases>
+    <TestCase Status="Failed" ID="0" Blockname="Rechner" Blocktype="FC" Description="Rechner Addition">
+      <TestStep Status="Passed" PlcCycle="2" Description="50+60">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="60" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="110" Expected="110" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+      <TestStep Status="Failed" PlcCycle="3" Description="32000+32000">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="32000" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="32000" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Failed" Name="Overload" Was="False" Expected="true" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Failed" Name="Ret_Val" Was="-1536" Expected="0" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+      <TestStep Status="Passed" PlcCycle="4" Description="50+60">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="60" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="110" Expected="110" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+      <TestStep Status="Passed" PlcCycle="5" Description="50-60">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'a'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="50" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="-60" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="-10" Expected="-10" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+    </TestCase>
+    <TestCase Status="Passed" ID="1" Blockname="Rechner" Blocktype="FC" Description="Rechner Multiplikation">
+      <TestStep Status="Passed" PlcCycle="2" Description="3*3">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="3" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="3" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="9" Expected="9" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+      <TestStep Status="Passed" PlcCycle="3" Description="89*89">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="89" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="89" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="7921" Expected="7921" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+      <TestStep Status="Passed" PlcCycle="5" Description="3*5">
+        <Inputs>
+          <Input Name="Mode" Datatype="Char" Direction="Input" Value="'m'" />
+          <Input Name="Zahl1" Datatype="Int" Direction="Input" Value="3" />
+          <Input Name="Zahl2" Datatype="Int" Direction="Input" Value="5" />
+        </Inputs>
+        <OutputResults>
+          <Result Status="Passed" Name="Overload" Was="False" Expected="false" Range="" Datatype="Bool" Direction="Output" />
+          <Result Status="Passed" Name="Ret_Val" Was="15" Expected="15" Range="" Datatype="Int" Direction="Return" />
+        </OutputResults>
+      </TestStep>
+    </TestCase>
+  </TestCases>
+</TestReport>
